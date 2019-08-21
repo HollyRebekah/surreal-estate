@@ -1,6 +1,6 @@
 .nav-bar{
     background-color: white;
-    border-bottom: 2px solid darkcyan;
+    border-bottom: 3px solid darkcyan;
 }
 
 .text-logo{
@@ -20,4 +20,9 @@
     margin: 0;
     padding-left: 35px;
     display: inline-block;
+}
+
+.item:hover {
+   font-size: 120%;
+   cursor: pointer;
 }
