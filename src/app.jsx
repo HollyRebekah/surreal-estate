@@ -7,14 +7,18 @@ import Properties from './components/properties';
 import AddProperties from './components/add-properties';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
         <NavBar />
         <Switch>
-             <Route exact path="/" component={Properties} />
-             <Route exact path="/add-property" component={AddProperties} />
-           </Switch>
+          <Route exact path="/" component={Properties} />
+          <Route exact path="/add-property" component={AddProperties} />
+        </Switch>
       </div>
     );
   }
