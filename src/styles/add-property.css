@@ -1,3 +1,12 @@
 .add-property{
     padding: 10px;
 }
+
+input{
+    width: 25%;
+    margin-left:7px;
+}
+
+select{
+    margin-left:7px;
+}
