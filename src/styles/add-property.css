@@ -1,12 +1,23 @@
 .add-property{
+    margin: 20px;
     padding: 10px;
+    background-color: white;
 }
 
 input{
+    position: relative;
     width: 25%;
     margin-left:7px;
 }
 
 select{
     margin-left:7px;    
+}
+
+button {
+    width:50%;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    font-size: 15px;
 }
