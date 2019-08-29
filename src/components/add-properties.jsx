@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/add-property.css';
+import axios from 'axios';
 
 class AddProperties extends React.Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class AddProperties extends React.Component {
     this.state = {
       fields: {
         title: '',
-        type: 'Flat',
-        city: 'Manchester',
+        type: '',
+        city: '',
         bedrooms: '',
         bathrooms: '',
         price: '',
@@ -18,13 +19,27 @@ class AddProperties extends React.Component {
   }
 
   handleAddProperty = (event) => {
+    axios.post('http://localhost:3000/api/v1/PropertyListing', {
+      title: this.state.fields.title,
+      type: this.state.fields.type,
+      city: this.state.fields.city,
+      bedrooms: this.state.fields.bedrooms,
+      bathrooms: this.state.fields.bathrooms,
+      price: this.state.fields.price,
+      email: this.state.fields.email,
+    })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
     event.preventDefault();
-    console.log(this.state.fields);
   };
 
   handleFieldChange = (event) => {
     this.setState({
-      fields: { ...this.state.fields, [event.target.name]: event.target.value  },
+      fields: { ...this.state.fields, [event.target.name]: event.target.value },
     });
   };
 
