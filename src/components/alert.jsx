@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/alert.css';
 
-const Alert = () => {
+const Alert = ({ message, success }) => {
   return (
-    <div className="Alert" message="Error!">There is a problem with the server. Please try again later</div>
+    <div className={`Alert ${success ? 'success' : ''}`}>{message}</div>
   );
 };
 

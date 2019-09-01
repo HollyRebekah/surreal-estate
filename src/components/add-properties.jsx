@@ -16,6 +16,9 @@ class AddProperties extends React.Component {
         price: '',
         email: '',
       },
+      alertMessage:'',
+      isSuccess: false,
+      isError: false,
     };
   }
 
@@ -47,7 +50,7 @@ class AddProperties extends React.Component {
   render() {
     return (
       <div className="add-property">
-        <Alert />
+        <Alert message="Success!" success />
         <form onSubmit={this.handleAddProperty}>
           <div>
           House Name

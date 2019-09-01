@@ -2,3 +2,8 @@
     color: darkred;
     background-color: #f5bbb8;
 }
+
+.Alert.success {
+    color: green;
+    background-color: #ccf2cb;
+}
