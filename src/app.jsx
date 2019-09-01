@@ -30,7 +30,11 @@ class App extends React.Component {
       <div>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={Properties} />
+          <Route
+            exact
+            path="/"
+            render={(props) => <Properties {...props} properties={this.state.database} />}
+          />
           <Route exact path="/add-property" component={AddProperties} />
         </Switch>
       </div>
