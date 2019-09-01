@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/add-property.css';
 import axios from 'axios';
+import Alert from '../components/alert';
 
 class AddProperties extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class AddProperties extends React.Component {
   render() {
     return (
       <div className="add-property">
+        <Alert />
         <form onSubmit={this.handleAddProperty}>
           <div>
           House Name
