@@ -16,13 +16,18 @@ class AddProperties extends React.Component {
         price: '',
         email: '',
       },
-      alertMessage:'',
+      alertMessage: '',
       isSuccess: false,
       isError: false,
     };
   }
 
   handleAddProperty = (event) => {
+    this.setState({
+      alertMessage: '',
+      isSuccess: false,
+      isError: false,
+    });
     axios.post('http://localhost:3000/api/v1/PropertyListing', {
       title: this.state.fields.title,
       type: this.state.fields.type,
@@ -34,9 +39,17 @@ class AddProperties extends React.Component {
     })
       .then(res => {
         console.log(res);
+        this.setState({
+          isSuccess: true,
+          alertMessage: 'Property added.',
+        });
       })
       .catch(error => {
         console.log(error);
+        this.setState({
+          isError: true,
+          alertMessage: 'There is a problem with the server, please try again later',
+        });
       });
     event.preventDefault();
   };
@@ -50,7 +63,8 @@ class AddProperties extends React.Component {
   render() {
     return (
       <div className="add-property">
-        <Alert message="Success!" success />
+        {this.state.isSuccess && <Alert message={this.state.alertMessage} success /> }
+        {this.state.isError && <Alert message={this.state.alertMessage} /> }
         <form onSubmit={this.handleAddProperty}>
           <div>
           House Name
