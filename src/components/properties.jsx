@@ -1,5 +1,6 @@
 import React from 'react';
 import PropertyCard from '../components/property-card';
+import '../styles/properties.css';
 
 class Properties extends React.Component {
   constructor(props) {

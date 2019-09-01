@@ -1,15 +1,17 @@
 import React from 'react';
+import '../styles/property-card.css';
 
 const PropertyCard = (props) => {
   return (
     <div className="property-card">
-      <span className="title">{props.title}</span>
-      <span className="type">{props.type}</span>
-      <span className="bathrooms">{props.bathrooms}</span>
-      <span className="bedrooms">{props.bedrooms}</span>
-      <span className="price">£{props.price}</span>
-      <span className="city">{props.city}</span>
-      <span className="email">{props.email}</span>
+      <div className="title">{props.title}</div>
+      <div className="type">{props.type}</div>
+      <div className="bathrooms">Bathrooms: {props.bathrooms}</div>
+      <div className="bedrooms">Bedrooms: {props.bedrooms}</div>
+      <div className="price">£{props.price}</div>
+      <div className="city">{props.city}</div>
+      <div className="email">{props.email}</div>
+      <br />
     </div>
   );
 };

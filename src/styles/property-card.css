@@ -1,0 +1,7 @@
+.property-card{
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 2px;
+    width: 33%;
+}
