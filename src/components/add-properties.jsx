@@ -9,8 +9,8 @@ class AddProperties extends React.Component {
     this.state = {
       fields: {
         title: '',
-        type: '',
-        city: '',
+        type: 'Flat',
+        city: 'Manchester',
         bedrooms: '',
         bathrooms: '',
         price: '',

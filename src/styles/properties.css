@@ -1,5 +1,6 @@
 .property-page{
+    margin-left: 160px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center
+    padding: 5px;
 }

@@ -1,7 +1,11 @@
 .property-card{
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
+    box-sizing: border-box;
     margin: 2px;
     width: 33%;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.type{
+    font-style: italic;
 }

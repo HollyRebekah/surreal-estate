@@ -1,9 +1,11 @@
 .Alert{
     color: darkred;
     background-color: #f5bbb8;
+    padding:5px;
 }
 
 .Alert.success {
     color: green;
     background-color: #ccf2cb;
+    padding: 5px;
 }
