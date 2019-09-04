@@ -1,6 +1,6 @@
 .side-bar {
     height: 100%;
-    width: 130px; /* Set the width of the sidebar */
+    width: 150px; /* Set the width of the sidebar */
     position: absolute;
     z-index: 1; 
     left: 0;
@@ -9,9 +9,14 @@
     padding-top: 20px;
     display: flex;
     border-right: 3px solid darkcyan;
+    overflow-wrap: break-word;
   }
 
 ul { padding-left: 1.2em; }
+
+.side-bar-title {
+  font-weight: 900;
+}
 
   .city-link {
     color: #000;

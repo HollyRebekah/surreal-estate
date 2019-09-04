@@ -1,9 +1,12 @@
 .property-card{
-    box-sizing: border-box;
-    margin: 2px;
+    margin: 5px;
     width: 33%;
     font-size: 18px;
     padding: 5px;
+    background-color: white;
+    border: 3px solid darkcyan;
+    overflow-wrap: break-word;
+    border-radius: 20px;
 }
 
 .type{

@@ -4,6 +4,7 @@ import '../styles/properties.css';
 import Axios from 'axios';
 import Alert from '../components/alert';
 import SideBar from '../components/side-bar';
+import qs from 'qs';
 
 class Properties extends React.Component {
   constructor(props) {
@@ -40,6 +41,16 @@ class Properties extends React.Component {
         .then(({ data: properties }) => this.setState({ properties }))
         .catch(error => console.log(error));
     }
+  }
+
+  buildQueryString(operation, valueObj) {
+    const { location: { search } } = this.props;
+    const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
+    const newQueryParams = {
+      ...currentQueryParams,
+      [operation]: JSON.stringift(valueObj),
+    };
+    return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
   }
 
   render() {

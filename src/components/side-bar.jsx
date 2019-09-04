@@ -6,7 +6,9 @@ const SideBar = () => {
   return (
     <div className="side-bar">
       <ul>
+        <div className="side-bar-title">Search by city:</div>
         <Link to={'/?query={"city":"Leeds"}'} className="city-link">Leeds </Link>
+        <br />
         <Link to={'/?query={"city":"Liverpool"}'} className="city-link">Liverpool </Link>
         <Link to={'/?query={"city":"Manchester"}'} className="city-link">Manchester </Link>
         <Link to={'/?query={"city":"Sheffield"}'} className="city-link">Sheffield </Link>
