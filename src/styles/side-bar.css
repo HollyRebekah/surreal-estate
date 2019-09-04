@@ -1,6 +1,6 @@
 .side-bar {
     height: 100%;
-    width: 140px; /* Set the width of the sidebar */
+    width: 130px; /* Set the width of the sidebar */
     position: absolute;
     z-index: 1; 
     left: 0;
@@ -10,3 +10,17 @@
     display: flex;
     border-right: 3px solid darkcyan;
   }
+
+ul { padding-left: 1.2em; }
+
+  .city-link {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .city-link:hover {
+    font-size: 120%;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+ }
