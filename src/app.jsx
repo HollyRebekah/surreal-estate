@@ -7,7 +7,6 @@ import Properties from './components/properties';
 import AddProperties from './components/add-properties';
 
 class App extends React.Component {
-  
   render() {
     return (
       <div>

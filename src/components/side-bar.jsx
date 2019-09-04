@@ -6,10 +6,10 @@ const SideBar = () => {
   return (
     <div className="side-bar">
       <ul>
-        <li>Leeds</li>
-        <li>Liverpool</li>
-        <li>Manchester</li>
-        <li>Sheffield</li>
+        <Link to={'/?query={"city":"Leeds"}'}>Leeds </Link>
+        <Link to={'/?query={"city":"Liverpool"}'}>Liverpool </Link>
+        <Link to={'/?query={"city":"Manchester"}'}>Manchester </Link>
+        <Link to={'/?query={"city":"Sheffield"}'}>Sheffield </Link>
       </ul>
     </div>
   );

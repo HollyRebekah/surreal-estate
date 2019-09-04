@@ -32,9 +32,19 @@ class Properties extends React.Component {
       });
   }
 
+  componentDidUpdate(prevProps) {
+    const { search } = this.props.location;
+
+    if (prevProps.location.search !== search) {
+      Axios.get(`http://localhost:3000/api/v1/PropertyListing${this.props.location.search}`)
+        .then(({ data: properties }) => this.setState({ properties }))
+        .catch(error => console.log(error));
+    }
+  }
+
   render() {
     return (
-      <div>
+      <div className="page">
         <SideBar />
         <div className="property-page">
           {this.state.error && <Alert message={this.state.alertMessage} /> }
