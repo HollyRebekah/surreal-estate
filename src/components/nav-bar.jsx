@@ -3,8 +3,9 @@ import '../styles/nav-bar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSign } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login';
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <div className="nav-bar">
       <div className="text-logo">
@@ -13,6 +14,12 @@ const NavBar = () => {
           <Link to="/" className="item">View Properties </Link>
           <Link to="/add-property" className="item">Add a Property </Link>
         </ul>
+        <FacebookLogin
+          appId="1088597931155576"
+          autoLoad
+          fields="name,email,picture"
+          callback={props.onLogin}
+        />
       </div>
     </div>
   );
