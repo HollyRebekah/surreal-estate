@@ -43,20 +43,20 @@ class Properties extends React.Component {
     }
   }
 
-  buildQueryString(operation, valueObj) {
+  buildQueryString= (operation, valueObj) => {
     const { location: { search } } = this.props;
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringift(valueObj),
+      [operation]: JSON.stringify(valueObj),
     };
     return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
-  }
+  };
 
   render() {
     return (
       <div className="page">
-        <SideBar />
+        <SideBar queryString={this.buildQueryString} />
         <div className="property-page">
           {this.state.error && <Alert message={this.state.alertMessage} /> }
 
