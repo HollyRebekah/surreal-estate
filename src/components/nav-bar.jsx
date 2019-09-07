@@ -8,19 +8,19 @@ import FacebookLogin from 'react-facebook-login';
 const NavBar = (props) => {
   return (
     <div className="nav-bar">
-      <div className="text-logo">
-        <FontAwesomeIcon className="text-logo"icon={faSign} />  Surreal Estate
-        <ul className="nav">
-          <Link to="/" className="item">View Properties </Link>
-          <Link to="/add-property" className="item">Add a Property </Link>
-        </ul>
+      <FontAwesomeIcon className="text-logo"icon={faSign} />  Surreal Estate
+      <ul className="nav">
+        <Link to="/" className="item">View Properties </Link>
+        <Link to="/add-property" className="item">Add a Property </Link>
         <FacebookLogin
           appId="1088597931155576"
           autoLoad
           fields="name,email,picture"
           callback={props.onLogin}
+          cssClass="login"
         />
-      </div>
+      </ul>
+
     </div>
   );
 };
