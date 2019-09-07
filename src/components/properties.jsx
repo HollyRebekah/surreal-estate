@@ -49,7 +49,10 @@ class Properties extends React.Component {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || '{}'),
+        ...valueObj,
+      }),
     };
     return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
   };
@@ -60,9 +63,13 @@ class Properties extends React.Component {
     });
   };
 
-  handleSearch = () => {
-    
-  }
+  handleSearch = (event) => {
+    event.preventDefault();
+    const { search } = this.state;
+    const searchTitle = this.buildQueryString('query', { title: { $regex: search } });
+    const { history } = this.props;
+    history.push(searchTitle);
+  };
 
   render() {
     return (
