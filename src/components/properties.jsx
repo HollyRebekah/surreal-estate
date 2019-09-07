@@ -13,6 +13,7 @@ class Properties extends React.Component {
       properties: [],
       error: false,
       alertMessage: '',
+      search: '',
     };
   }
 
@@ -53,14 +54,37 @@ class Properties extends React.Component {
     return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
   };
 
+  handleInputChange = (event) => {
+    this.setState({
+      search: event.target.value,
+    });
+  };
+
+  handleSearch = () => {
+    
+  }
+
   render() {
     return (
       <div className="page">
         <SideBar queryString={this.buildQueryString} />
-        <div className="property-page">
-          {this.state.error && <Alert message={this.state.alertMessage} /> }
+        <div>
+          <form
+            className="search"
+            onSubmit={this.handleSearch}
+          >
+            <input
+              type="text"
+              placeholder="Search..."
+              value={this.state.search}
+              onChange={this.handleInputChange}
+            />
+            <button type="submit">Search</button>
+          </form>
+          <div className="property-page">
+            {this.state.error && <Alert message={this.state.alertMessage} /> }
 
-          {
+            {
         this.state.properties.map(property => (
           <PropertyCard
             key={property._id}
@@ -74,6 +98,7 @@ class Properties extends React.Component {
           />
         ))
         }
+          </div>
         </div>
       </div>
     );

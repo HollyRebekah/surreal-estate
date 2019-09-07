@@ -4,3 +4,8 @@
     flex-wrap: wrap;
     padding: 5px;
 }
+
+.search{ 
+    display: flex;
+    align-content: center;
+}
