@@ -13,7 +13,7 @@ const NavBar = (props) => {
         <Link to="/" className="item">View Properties </Link>
         <Link to="/add-property" className="item">Add a Property </Link>
         <FacebookLogin
-          appId="1088597931155576"
+          appId="3126946394100842"
           autoLoad
           fields="name,email,picture"
           callback={props.onLogin}
