@@ -32,13 +32,13 @@
    text-decoration: none;
 }
 
-.login {
+.facebook {
 position: absolute;
 margin: 10px;
 width: 25%;
 background-color: #3b5998;
 }
 
-.login:hover{
+.facebook:hover{
     cursor: pointer;
 }

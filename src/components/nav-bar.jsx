@@ -12,13 +12,16 @@ const NavBar = (props) => {
       <ul className="nav">
         <Link to="/" className="item">View Properties </Link>
         <Link to="/add-property" className="item">Add a Property </Link>
+        {props.userID && <button className="facebook">Sign Out</button>}
+        {!props.userID && (
         <FacebookLogin
           appId="3126946394100842"
           autoLoad
           fields="name,email,picture"
           callback={props.onLogin}
-          cssClass="login"
+          cssClass="facebook"
         />
+        )}
       </ul>
 
     </div>
