@@ -81,12 +81,18 @@ class Properties extends React.Component {
             onSubmit={this.handleSearch}
           >
             <input
+              className="input"
               type="text"
               placeholder="Search..."
               value={this.state.search}
               onChange={this.handleInputChange}
             />
-            <button type="submit">Search</button>
+            <button
+              type="submit"
+              className="submit"
+            >
+                Search
+            </button>
           </form>
           <div className="property-page">
             {this.state.error && <Alert message={this.state.alertMessage} /> }
@@ -102,6 +108,7 @@ class Properties extends React.Component {
             price={property.price}
             city={property.city}
             email={property.email}
+            userID={this.props.userID}
           />
         ))
         }

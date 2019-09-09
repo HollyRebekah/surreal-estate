@@ -15,15 +15,32 @@ class App extends React.Component {
   }
 
   handleLogin =(response) => {
-    this.setState({ userID: response.userID });
+    console.log(response)
+    this.setState({ userID: response.userID, accessToken: response.accessToken  });
+  };
+
+  handleLogOut =() => {
+    window.FB.getLoginStatus((response) => {
+      console.log(response);
+    });
+    window.FB.logout(() => {
+
+    });
   };
 
   render() {
     return (
       <div>
-        <NavBar onLogin={this.handleLogin} userID={this.state.userID} />
+        <NavBar
+          onLogin={this.handleLogin}
+          onLogout={this.handleLogOut}
+          userID={this.state.userID}
+        />
         <Switch>
-          <Route exact path="/" component={Properties} />
+          <Route
+            exact path="/"
+            render={(props) => <Properties {...props} userID={this.state.userID} />}
+          />
           <Route exact path="/add-property" component={AddProperties} />
         </Switch>
       </div>

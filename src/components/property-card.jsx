@@ -19,6 +19,7 @@ const PropertyCard = (props) => {
       <div className="city">{props.city}</div>
       <div className="email">{props.email}</div>
       <br />
+      {props.userID && (<button>Save Property</button>)}
     </div>
   );
 };
